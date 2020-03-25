@@ -1,0 +1,26 @@
+<%- include ('templates/header'); -%>
+
+<div class='container'>
+    <div class='jumbotron'>
+        <h1> SEARCH RESULTS </h1>
+        <button class='btn btn-info' onclick='location.href="/";'>Search Again</button>
+    </div>
+
+    <ul id='book-list'>
+        <% data.Search.forEach(function(book){%>
+	        <li> 
+	            <img class='poster' src=<%=book.Poster%> />
+	            <div>
+                    <h5><%=book.Title%></h5>
+                    <p><%=book.Author%></p>
+                    <p><%=book.Publish%></p>
+                    <p><%=book.Publisher%></p>
+                    <p><%=book.ISBN%></p>
+                    <p><%=book.Pages%></p>
+                </div>
+	        </li>	
+        <% }); %>
+    <ul>
+</div>
+
+<%- include ('templates/footer'); -%>
